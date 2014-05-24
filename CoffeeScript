@@ -1,0 +1,56 @@
+
+Alt-CoffeeScript
+=====
+**What it is:**  Essentially, CoffeeScript _is_ JavaScript. Or it may be more accurate to say its another way of writing JavaScript. CoffeeScript compiles to JavaScript: so your CoffeeScript input gets output as JavaScript.  CoffeeScript allows the functionality of JS with less code and less attention to that _pesky_ JS syntax. 
+
+CoffeeScript uses significant whitespace to delimit blocks of code. You don't need to use semicolons to terminate expressions; ending the line will do just as well (although semicolons can still be used to fit multiple expressions onto a single line). Instead of using curly braces { } to surround blocks of code in functions, if-statements, switch, and try/catch, use indentation instead. You don't need to use parentheses to invoke a function if you're passing arguments. The implicit call wraps forward to the end of the line or block expression.
+console.log sys.inspect object → console.log(sys.inspect(object));
+
+All of this results in some pretty-looking CoffeeScript code:
+```CoffeeScript:
+fill = (container, liquid = "coffee") -> "Filling the #{container} with #{liquid}…"
+```
+
+
+```JavaScript:
+var fill; 
+fill = function(container, liquid) { 
+	if (liquid == null) { 
+		liquid = "coffee”; 
+	} 
+	return "Filling the " + container + " with " + liquid + "...”; 
+};
+```
+
+## Gotchas:
+
+CoffeeScript is very white-space-sensitive. This applies to other languages as well, but just as CoffeeScript ‘cleans-up’ your JavaScript syntax, it assumes you know what you’re doing. The implications of that space, or that semicolon, or that set of parenthesis is very significant. While CoffeeScript removes the need to type that syntax, it doesn’t remove the necessity for maintaining the effect of that syntax. 
+
+One criticism is that CoffeeScript sacrifices readability in favor of ‘write-ability’. 
+Take a look at these two snippets. Next to the CoffeeScript code is the resulting JavaScript:
+
+```
+
+doSomething () ->  'hello'
+                                      	doSomething(function() {
+                                        		return 'hello';
+                                      	});
+
+doSomething() ->  'hello'
+                                      	doSomething()(function() {
+                                        		return 'hello';
+                                      	});
+```
+
+
+Both statements do completely different things, although they look very similar. The first one takes the space after the function name and applies implicit parenthesis to the function call, taking the function as a single parameter. The second one interprets the parenthesis as a function call with no arguments and applies implicit parenthesis on that result. If that doesn’t make sense to you, or you couldn’t spot the differences in the code, then CoffeeScript might simply be a path to confusion and frustration!
+
+
+## Sources: 
+*[http://coffeescript.org/] Full documentation, example code, a nifty “Try CoffeeScript” panel
+
+*[http://ceronman.com/2012/09/17/coffeescript-less-typing-bad-readability/] Well-written critique of CoffeeScript from someone that tried it for several months, then switched back to JS.  Manuel Cerón, 2012
+
+*[http://code.tutsplus.com/articles/should-you-learn-coffeescript--net-23206] An interesting back-and-forth discussion about whether or not to learn CS. Jeffery Way 2011
+
+*[http://coffeescriptcookbook.com/] Lots of snippets/recipes/code-samples to speed your implementation of CS. Need to shuffle array elements with CS? You’ll find the code here!
