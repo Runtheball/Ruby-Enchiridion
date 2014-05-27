@@ -46,7 +46,7 @@ doSomething() ->  'hello'
 Both statements do completely different things, although they look very similar. The first one takes the space after the function name and applies implicit parenthesis to the function call, taking the function as a single parameter. The second one interprets the parenthesis as a function call with no arguments and applies implicit parenthesis on that result. If that doesn’t make sense to you, or you couldn’t spot the differences in the code, then CoffeeScript might simply be a path to confusion and frustration!
 
 
-## Sources: 
+## Resources: 
 *[http://coffeescript.org/] Full documentation, example code, a nifty “Try CoffeeScript” panel
 
 *[http://ceronman.com/2012/09/17/coffeescript-less-typing-bad-readability/] Well-written critique of CoffeeScript from someone that tried it for several months, then switched back to JS.  Manuel Cerón, 2012
@@ -54,3 +54,5 @@ Both statements do completely different things, although they look very similar.
 *[http://code.tutsplus.com/articles/should-you-learn-coffeescript--net-23206] An interesting back-and-forth discussion about whether or not to learn CS. Jeffery Way 2011
 
 *[http://coffeescriptcookbook.com/] Lots of snippets/recipes/code-samples to speed your implementation of CS. Need to shuffle array elements with CS? You’ll find the code here!
+
+*[http://js2coffee.org/]  A JavaScript to CoffeeScript converter
